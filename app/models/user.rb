@@ -24,15 +24,11 @@ class User < ApplicationRecord
               if: :will_save_change_to_username?
             }
 
-  validates :password,
-            confirmation: { if: :require_password? },
-            length: {
-              minimum: 8,
-              if: :require_password?
-            }
-  validates :password_confirmation,
-            length: {
-              minimum: 8,
-              if: :require_password?
-            }
+  validates :crypted_password,
+            # format: {
+            #   # with: /\A[a-z0-9]+\z/,
+            #   message: 'should use only letters and numbers.'
+            # },
+            length: { within: 8..30 }
+
 end
