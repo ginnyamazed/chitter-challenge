@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Hello World!!!</h1>
+
+<%= button_to "Create a New User", new_registrations_path %>
+<%= button_to "Log In", '/login' %>
+<% if Current.user %>
+    Logged in as: <%= Current.user.username %>
+<%= button_to "Logout", logout_path, method: :delete %>
+<% end %>
