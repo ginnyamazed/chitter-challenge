@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @quack %>
+
+<div>
+  <%= link_to "Edit this quack", edit_quack_path(@quack) %> |
+  <%= link_to "Back to quacks", quacks_path %>
+
+  <%= button_to "Destroy this quack", @quack, method: :delete %>
+</div>

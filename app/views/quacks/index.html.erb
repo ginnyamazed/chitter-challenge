@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Quacks</h1>
+
+<div id="quacks">
+  <% @quacks.each do |quack| %>
+    <%= render quack %>
+    <p>
+      <%= link_to "Show this quack", quack %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New quack", new_quack_path %>

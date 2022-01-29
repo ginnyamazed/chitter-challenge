@@ -1,0 +1,23 @@
+<%= form_with(model: quack) do |form| %>
+  <% if form.object.errors.any? %>
+    <div class="alert alert-danger">
+      <% form.object.errors.full_messages.each do |message| %>
+        <div><%= message %></div>
+      <% end %>
+    </div>
+  <% end %>
+
+  <div class="mb-3">
+    <%= form.label :content %>
+    <%= form.text_area :content %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :tagged_users %>
+    <%= form.text_field :tagged_users %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.submit class: "btn btn-primary" %>
+  </div>
+<% end %>

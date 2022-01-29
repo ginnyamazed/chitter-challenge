@@ -1,0 +1,2 @@
+class Quack < ApplicationRecord
+end
