@@ -1,16 +1,15 @@
 # frozen_string_literal: true
 
 class RegistrationsController < ApplicationController
-  before_action :set_user, only: %i[show edit update destroy]
 
   # GET /users or /users.json
 
-  def index; end
+  # def old; end
 
   # GET /users/1 or /users/1.json
-  def show
-    @user = User.find_by("Login = '#{params[:email]}' AND password = '#{params[:password]}'")
-  end
+  # def show
+  #   @user = User.find_by("Login = '#{params[:email]}' AND password = '#{params[:password]}'")
+  # end
 
   # GET /users/new
   def new
@@ -18,9 +17,8 @@ class RegistrationsController < ApplicationController
   end
 
   # GET /users/1/edit
-  def edit; end
+  # def edit; end
 
-  def login; end
 
   # POST /users or /users.json
   def create
@@ -47,21 +45,21 @@ class RegistrationsController < ApplicationController
   end
 
   # DELETE /users/1 or /users/1.json
-  def destroy
-    @user.destroy
-
-    respond_to do |format|
-      format.html { redirect_to registrations_url, notice: 'User was successfully destroyed.' }
-      format.json { head :no_content }
-    end
-  end
+  # def destroy
+  #   @user.destroy
+  #
+  #   respond_to do |format|
+  #     format.html { redirect_to registrations_url, notice: 'User was successfully destroyed.' }
+  #     format.json { head :no_content }
+  #   end
+  # end
 
   private
 
   # Use callbacks to share common setup or constraints between actions.
-  def set_user
-    @user = User.find(params[:id])
-  end
+  # def set_user
+  #   @user = User.find(params[:id])
+  # end
 
   # Only allow a list of trusted parameters through.
   def user_params
