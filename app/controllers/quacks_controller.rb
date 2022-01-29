@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class QuacksController < ApplicationController
+  before_action :require_user_logged_in!
   before_action :set_quack, only: %i[show edit update destroy]
 
   # GET /quacks or /quacks.json
