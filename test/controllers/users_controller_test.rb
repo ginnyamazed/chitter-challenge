@@ -8,7 +8,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should get index' do
-    get users_url
+    get registrations_url
     assert_response :success
   end
 
@@ -19,7 +19,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
 
   test 'should create user' do
     assert_difference('User.count') do
-      post users_url, params: { user: { username: @user.username } }
+      post registrations_url, params: { user: { username: @user.username } }
     end
 
     assert_redirected_to user_url(User.last)
@@ -40,6 +40,6 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
       delete user_url(@user)
     end
 
-    assert_redirected_to users_url
+    assert_redirected_to registrations_url
   end
 end

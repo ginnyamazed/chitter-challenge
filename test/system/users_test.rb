@@ -6,12 +6,12 @@ class UsersTest < ApplicationSystemTestCase
   end
 
   test "visiting the index" do
-    visit users_url
+    visit registrations_url
     assert_selector "h1", text: "Users"
   end
 
   test "should create user" do
-    visit users_url
+    visit registrations_url
     click_on "New user"
 
     fill_in "Username", with: @user.username
