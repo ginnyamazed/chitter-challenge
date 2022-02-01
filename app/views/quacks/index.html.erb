@@ -1,12 +1,22 @@
-<h1>Quacks</h1>
+<h1>Home</h1>
 
-<div id="quacks">
-  <% @quacks.each do |quack| %>
-    <%= render quack %>
-    <p>
-      <%= link_to "Show this quack", quack %>
-    </p>
-  <% end %>
-</div>
+<% @quacks.each do |quack| %>
+  <p>
+  <div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <% username = User.find_by(id: quack.user_id)&.username %>
+      <h5 class="card-title"> <%= '@' %><%= username %></h5>
+      <h6 class="card-subtitle mb-2 text-muted"> <%= quack.created_at %></h6>
+      <p class="card-text"><%= link_to quack.content, quack %></p>
+      <a href="#" class="card-link"><%= quack.tagged_users %></a>
+    </div>
+  </div>
+  </p>
+<% end %>
 
-<%= link_to "New quack", new_quack_path %>
+
+<%= link_to "New quack", new_quack_path, class: 'btn btn-primary' %>
+<% if Current.user %>
+<%= button_to 'Logout', logout_path, method: :delete %>
+<% end %>
+<%= link_to 'Edit Password', password_path %>

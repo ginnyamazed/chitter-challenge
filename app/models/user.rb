@@ -2,6 +2,7 @@
 
 class User < ApplicationRecord
   has_secure_password
+  has_many :quacks
 
   validates :email,
             presence: true,

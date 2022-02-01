@@ -6,7 +6,10 @@
       <% end %>
     </div>
   <% end %>
-    <%= form.hidden_field :user_id, value= Current.user.id %>
+  <% if Current.user %>
+
+    <%= form.hidden_field :user_id, value: Current.user.id %>
+    <% end %>
   <div class="mb-3">
     <%= form.label :content %>
     <%= form.text_area :content %>

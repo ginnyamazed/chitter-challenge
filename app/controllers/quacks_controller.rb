@@ -4,9 +4,10 @@ class QuacksController < ApplicationController
   before_action :require_user_logged_in!
   before_action :set_quack, only: %i[show edit update destroy]
 
+
   # GET /quacks or /quacks.json
   def index
-    @quacks = Quack.all
+    @quacks = Quack.all.sort.reverse
   end
 
   # GET /quacks/1 or /quacks/1.json
@@ -67,6 +68,6 @@ class QuacksController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def quack_params
-    params.require(:quack).permit(:content, :tagged_users)
+    params.require(:quack).permit(:content, :tagged_users, :user_id)
   end
 end
