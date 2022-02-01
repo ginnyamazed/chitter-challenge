@@ -12,10 +12,13 @@
 
 ActiveRecord::Schema.define(version: 2022_01_29_174804) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "quacks", force: :cascade do |t|
     t.string "content"
     t.string "tagged_users"
-    t.integer "user_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_quacks_on_user_id"
