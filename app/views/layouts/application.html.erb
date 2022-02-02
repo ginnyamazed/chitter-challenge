@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>Ginny's Quacker</title>
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -14,10 +15,25 @@
   </head>
 
   <body>
-    <div class="container">
-      <%= render partial: "layouts/shared/flash" %>
-      <%= yield %>
+  <div style="background-color:lightsteelblue">
+   <%= render partial: 'layouts/shared/navbar' %>
 
+
+      <div class="container-fluid mt-3">
+        <div class="container">
+          <div class="row">
+            <div class="col">
+            </div>
+            <div class="col-6">
+              <%= render partial: "layouts/shared/flash" %>
+              <%= yield %>
+            </div>
+            <div class="col">
+            </div>
+          </div>
+        </div>
+
+      </div>
     </div>
   </body>
 </html>
