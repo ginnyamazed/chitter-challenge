@@ -7,12 +7,7 @@
     <div>
       <%= link_to "Create a New User", signup_path, method: :get, class: 'btn btn-primary' %>
 
-      <% if Current.user %>
-        Logged in as: <%= Current.user.username %>
-        User id is: <%= Current.user.id %>
-        <%= button_to 'Logout', logout_path, method: :delete %>
-      <% end %>
-      <%= link_to 'Edit Password', password_path %>
+
     </div>
   </div>
 </div>

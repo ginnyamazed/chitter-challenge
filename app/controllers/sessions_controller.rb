@@ -10,7 +10,6 @@ class SessionsController < ApplicationController
     else
       flash[:alert] = 'Invalid email or password'
       redirect_to root_path
-      #TODO: flash is not occurring
     end
   end
 
