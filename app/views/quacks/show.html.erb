@@ -1,13 +1,15 @@
-
-<% if Current.user.id == @quack.user_id%>
-
+<div class="row">
+  <div class="col">
     <%= render @quack %>
 
+    <div style="margin-top: 4px">
+      <%= link_to "Back to quacks", quacks_path, class: 'btn btn-primary btn-lg'%>
+    </div>
+    <div style="margin-top: 4px">
+      <h4>
+        <%= link_to "Edit this quack", edit_quack_path(@quack) %>
+      </h4>
+    </div>
 
-<div>
-  <%= link_to "Edit this quack", edit_quack_path(@quack) %> |
-  <%= link_to "Back to quacks", quacks_path, class: 'btn btn-primary'%>
-
-  <%= button_to "Destroy this quack", @quack, method: :delete, class: 'btn btn-primary' %>
+  </div>
 </div>
-<% end %>

@@ -1,10 +1,13 @@
-<h1>Editing quack</h1>
+<h2 style="color: steelblue">Editing quack</h2>
 
-<%= render "form", quack: @quack %>
+  <%= render "form", quack: @quack %>
+  <div style="margin-top: 4px">
+    <%= button_to "Destroy this quack", @quack, method: :delete, class: 'btn btn-primary' %>
+  </div>
 
-<br>
-
-<div>
-  <%= link_to "Show this quack", @quack %> |
-  <%= link_to "Back to quacks", quacks_path %>
-</div>
+  <div>
+    <h4>
+    <%= link_to "Show this quack", @quack %>  |
+    <%= link_to "Back to quacks", quacks_path %>
+    </h4>
+  </div>
