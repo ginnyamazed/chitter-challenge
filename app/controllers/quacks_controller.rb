@@ -27,7 +27,7 @@ class QuacksController < ApplicationController
 
     respond_to do |format|
       if @quack.save
-        format.html { redirect_to quack_url(@quack), notice: 'Quack was successfully created.' }
+        format.html { redirect_to quacks_path, notice: 'Quack was successfully created.' }
         format.json { render :show, status: :created, location: @quack }
       else
         format.html { render :new, status: :unprocessable_entity }
