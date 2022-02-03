@@ -1,4 +1,6 @@
 class MainController < ApplicationController
 
-  def index;  end
+  def index;
+    session[:user_id] = nil
+  end
 end

@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :quacks
 
   root to: 'main#index'
-  get 'welcome', to: 'sessions#new', as: :main_index
+  get 'login', to: 'sessions#new', as: :main_index
   post 'login', to: 'sessions#create'
   get 'signup', to: 'registrations#new'
   post 'signup', to: 'registrations#create'
