@@ -1,4 +1,5 @@
 
+<% if Current.user.id == @quack.user_id%>
 
     <%= render @quack %>
 
@@ -9,4 +10,4 @@
 
   <%= button_to "Destroy this quack", @quack, method: :delete, class: 'btn btn-primary' %>
 </div>
-
+<% end %>
